@@ -96,6 +96,12 @@ cc_library_static {
         "wifi_status_util.cpp",
     ],
 
+    header_libs: [
+        "wifi_legacy_headers",
+    ],
+    include_dirs: [
+        "frameworks/opt/net/wifi/libwifi_hal/include",
+    ],
     shared_libs: [
         "libbase",
         "libbinder_ndk",
@@ -128,6 +134,12 @@ cc_binary {
         "-Wextra",
     ],
     srcs: ["service.cpp"],
+    header_libs: [
+        "wifi_legacy_headers",
+    ],
+    include_dirs: [
+        "frameworks/opt/net/wifi/libwifi_hal/include",
+    ],
     shared_libs: [
         "libbase",
         "libbinder_ndk",
@@ -157,6 +169,12 @@ cc_binary {
         "-Wextra",
     ],
     srcs: ["service.cpp"],
+    header_libs: [
+        "wifi_legacy_headers",
+    ],
+    include_dirs: [
+        "frameworks/opt/net/wifi/libwifi_hal/include",
+    ],
     shared_libs: [
         "libbase",
         "libbinder_ndk",
