@@ -33,7 +33,11 @@ cc_defaults {
     header_libs: [
         "libaudio_system_headers",
         "libaudioaidl_headers",
+        "libaudioclient_headers",
         "libxsdc-utils",
+    ],
+    include_dirs: [
+        "frameworks/av/media/libnbaio/include_mono",
     ],
     cflags: [
         "-DBACKEND_NDK",
@@ -50,6 +54,9 @@ cc_library {
         "latest_android_hardware_bluetooth_audio_ndk_shared",
     ],
     export_include_dirs: ["include"],
+    include_dirs: [
+        "frameworks/av/media/libnbaio/include_mono",
+    ],
     srcs: [
         "AidlConversionXsdc.cpp",
         "AudioPolicyConfigXmlConverter.cpp",
@@ -110,6 +117,7 @@ cc_library {
         "liblog",
         "libmedia_helper",
         "libmediautils_vendor",
+        "libnbaio_mono",
         "libstagefright_foundation",
     ],
     export_shared_lib_headers: [
