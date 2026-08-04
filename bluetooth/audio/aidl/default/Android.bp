@@ -10,7 +10,10 @@ package {
 cc_library_shared {
     name: "android.hardware.bluetooth.audio-impl",
     vendor: true,
-    vintf_fragments: ["bluetooth_audio.xml"],
+    vintf_fragments: select(soong_config_variable("metroid", "stock_bluetooth_audio"), {
+        true: [],
+        default: ["bluetooth_audio.xml"],
+    }),
     defaults: [
         "aconfig_lib_cc_static_link.defaults",
         "latest_android_hardware_bluetooth_audio_ndk_shared",
